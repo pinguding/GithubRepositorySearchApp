@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class SearchViewController: BaseViewController<SearchViewModel> {
 
@@ -71,11 +72,15 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
         navigationItem.title = "Search Repository"
         
         let searchController = UISearchController(searchResultsController: nil)
-        searchController.hidesNavigationBarDuringPresentation = true
         searchController.searchBar.delegate = self
         
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = true
+    }
+    
+    private func removeImageCache() {
+        let cache = ImageCache.default
+        
+        cache.clearCache()
     }
 }
 

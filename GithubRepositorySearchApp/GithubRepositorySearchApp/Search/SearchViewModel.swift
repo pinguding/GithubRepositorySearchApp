@@ -55,14 +55,9 @@ final class SearchViewModel: BaseViewModel {
     func requestNextPage() {
         if let currentAPIItem = currentAPIItem, let totalCount = totalCount {
             if totalCount > currentAPIItem.currentPage * perPage {
-                enableActivityIndicator = true
                 var newAPIItem = currentAPIItem
                 newAPIItem.currentPage += 1
                 requestAPI(item: newAPIItem, isNewItem: false)
-            } else {
-                enableActivityIndicator = false
-                let model = modelPublisher.value
-                modelPublisher.send(model)
             }
         }
     }
@@ -95,6 +90,7 @@ final class SearchViewModel: BaseViewModel {
                     if newModels.isEmpty {
                         self.alertPublisher.send(AlertModel(title: "검색 결과가 없습니다.", buttons: [.init(buttonTitle: "확인", style: .default)]))
                     }
+                    self.modelPublisher.value.removeAll()
                     self.modelPublisher.send(newModels)
                 } else {
                     self.modelPublisher.value.append(contentsOf: newModels)

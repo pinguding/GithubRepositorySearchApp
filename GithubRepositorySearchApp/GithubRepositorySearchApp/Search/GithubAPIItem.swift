@@ -62,6 +62,8 @@ struct GithubItem: Codable {
     
     var description: String?
     
+    var htmlUrl: String
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -69,6 +71,7 @@ struct GithubItem: Codable {
         case starCount = "stargazers_count"
         case language
         case description
+        case htmlUrl = "html_url"
     }
 }
 
