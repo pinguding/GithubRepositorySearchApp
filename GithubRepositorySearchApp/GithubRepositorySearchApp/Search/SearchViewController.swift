@@ -25,10 +25,17 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
             
             let group = NSCollectionLayoutGroup.vertical(layoutSize: item.layoutSize, subitems: [item])
             
-            return NSCollectionLayoutSection(group: group)
+            let secion = NSCollectionLayoutSection(group: group)
+            
+            secion.boundarySupplementaryItems = [
+                NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
+            ]
+            
+            return secion
         })
         
         collectionView.registerCells(SearchResultCell.self)
+        collectionView.registerFooterView(ActivityIndicatorFooterView.self)
         
         dataSource = UICollectionViewDiffableDataSource<Int, Model>(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             
@@ -36,6 +43,12 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
             
             return baseCollectionView?.dequeueReusableBaseCollectionCell(SearchResultCell.self, itemIdentifier: itemIdentifier, for: indexPath)
         })
+        
+        dataSource?.supplementaryViewProvider = { collectionView, kind, indexPath in
+            let baseCollectionView = collectionView as? BaseCollectionView
+            
+            return baseCollectionView?.dequeueReusableBaseSupplementaryView(ActivityIndicatorFooterView.self, kind: UICollectionView.elementKindSectionFooter, item: self.viewModel!.enableActivityIndicator, for: indexPath)
+        }
     }
     
     override func modelUpdateHandler(updatedItems: [Model]) {
@@ -60,7 +73,9 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
 
 extension SearchViewController: UICollectionViewDelegate {
     
-    
+    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
