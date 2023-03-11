@@ -10,10 +10,17 @@ import Foundation
 struct DefaultGitHubSearchAPI: APIItem {
     
     init(searchItem: String, page: Int) {
+        currentPage = page
         data = [
             "q": searchItem,
             "page": "\(page)"
         ]
+    }
+    
+    var currentPage: Int {
+        didSet {
+            data["page"] = "\(currentPage)"
+        }
     }
     
     var baseURL: String = "https://api.github.com"

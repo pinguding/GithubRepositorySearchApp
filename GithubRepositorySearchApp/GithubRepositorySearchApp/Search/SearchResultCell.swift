@@ -42,6 +42,7 @@ final class SearchResultCell: BaseCollectionViewCell<SearchResultModel> {
         repositoryOwnerLabel.text = item.repositoryOwner
         titleLabel.text = item.title
         descriptionLabel.text = item.description
+        stargazeCountLabel.text = item.starCount.description
         if item.language.isEmpty {
             languageColor.isHidden = true
             languageLabel.isHidden = true
