@@ -24,6 +24,9 @@
 		0A1E0AE129BCC31D00448042 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AE029BCC31D00448042 /* SearchResultCell.swift */; };
 		0A1E0AE329BCC34100448042 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E0AE229BCC34100448042 /* SearchResultCell.xib */; };
 		0A58857929BCC8CC00D073BB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A58857829BCC8CC00D073BB /* Kingfisher */; };
+		0A58857C29BCCE5E00D073BB /* BaseCollectionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58857B29BCCE5E00D073BB /* BaseCollectionComponents.swift */; };
+		0A58857E29BCCFC800D073BB /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58857D29BCCFC800D073BB /* BaseCollectionView.swift */; };
+		0A58858029BCDC3C00D073BB /* UICollectionReusableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58857F29BCDC3C00D073BB /* UICollectionReusableViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		0A1E0ADE29BCBF6000448042 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		0A1E0AE029BCC31D00448042 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		0A1E0AE229BCC34100448042 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		0A58857B29BCCE5E00D073BB /* BaseCollectionComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionComponents.swift; sourceTree = "<group>"; };
+		0A58857D29BCCFC800D073BB /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
+		0A58857F29BCDC3C00D073BB /* UICollectionReusableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionReusableViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,8 @@
 		0A1E0AD429BCA61E00448042 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				0A58857D29BCCFC800D073BB /* BaseCollectionView.swift */,
+				0A58857B29BCCE5E00D073BB /* BaseCollectionComponents.swift */,
 				0A1E0AD529BCA70100448042 /* BaseViewController.swift */,
 				0A1E0AD729BCA81600448042 /* BaseViewModel.swift */,
 			);
@@ -170,6 +178,7 @@
 		0A58857A29BCCDB000D073BB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0A58857F29BCDC3C00D073BB /* UICollectionReusableViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,14 +322,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A58858029BCDC3C00D073BB /* UICollectionReusableViewExtension.swift in Sources */,
 				0A1E0ADA29BCB71B00448042 /* SearchViewModel.swift in Sources */,
 				0A1E0AA929BC9E4D00448042 /* SearchViewController.swift in Sources */,
 				0A1E0AD829BCA81600448042 /* BaseViewModel.swift in Sources */,
 				0A1E0AD629BCA70100448042 /* BaseViewController.swift in Sources */,
+				0A58857E29BCCFC800D073BB /* BaseCollectionView.swift in Sources */,
 				0A1E0ADF29BCBF6000448042 /* MainNavigationController.swift in Sources */,
 				0A1E0AA529BC9E4D00448042 /* AppDelegate.swift in Sources */,
 				0A1E0AE129BCC31D00448042 /* SearchResultCell.swift in Sources */,
 				0A1E0AA729BC9E4D00448042 /* SceneDelegate.swift in Sources */,
+				0A58857C29BCCE5E00D073BB /* BaseCollectionComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

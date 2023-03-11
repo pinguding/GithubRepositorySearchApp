@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class SearchResultCell: UICollectionViewCell {
+final class SearchResultCell: BaseCollectionViewCell<SearchResultModel> {
     
     @IBOutlet weak var avatarImageView: UIImageView!
     
@@ -35,7 +35,7 @@ final class SearchResultCell: UICollectionViewCell {
         languageLabel.text = nil
     }
     
-    public func configureCell(item: SearchResultModel) {
+    override func configureCell(item: SearchResultModel) {
         if let url = URL(string: item.avatarImageURLString) {
             avatarImageView.kf.setImage(with: .network(url))
         }
