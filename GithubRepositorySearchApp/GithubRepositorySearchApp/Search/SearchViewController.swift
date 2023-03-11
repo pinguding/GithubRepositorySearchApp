@@ -18,20 +18,23 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
         
         setupNavitaionBar()
         
-        collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, environment in
-            let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(100)))
-            
-            item.contentInsets = .init(top: 16, leading: 16, bottom: 16, trailing: 16)
+        collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { [weak self] sectionIndex, environment in
+            let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200)))
             
             let group = NSCollectionLayoutGroup.vertical(layoutSize: item.layoutSize, subitems: [item])
             
-            let secion = NSCollectionLayoutSection(group: group)
+            let section = NSCollectionLayoutSection(group: group)
             
-            secion.boundarySupplementaryItems = [
-                NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
-            ]
+            if let enable = self?.viewModel?.enableActivityIndicator, enable {
+                section.boundarySupplementaryItems = [
+                    NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
+                ]
+            }
             
-            return secion
+            section.contentInsets = .init(top: 20, leading: 20, bottom: .zero, trailing: 20)
+            section.interGroupSpacing = 20
+            
+            return section
         })
         
         collectionView.registerCells(SearchResultCell.self)
@@ -44,11 +47,16 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
             return baseCollectionView?.dequeueReusableBaseCollectionCell(SearchResultCell.self, itemIdentifier: itemIdentifier, for: indexPath)
         })
         
-        dataSource?.supplementaryViewProvider = { collectionView, kind, indexPath in
+        dataSource?.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
             let baseCollectionView = collectionView as? BaseCollectionView
             
-            return baseCollectionView?.dequeueReusableBaseSupplementaryView(ActivityIndicatorFooterView.self, kind: UICollectionView.elementKindSectionFooter, item: self.viewModel!.enableActivityIndicator, for: indexPath)
+            guard let self = self, let viewModel = self.viewModel else { return UICollectionReusableView() }
+            
+            return baseCollectionView?.dequeueReusableBaseSupplementaryView(ActivityIndicatorFooterView.self, kind: UICollectionView.elementKindSectionFooter, item: viewModel.enableActivityIndicator, for: indexPath)
         }
+        
+        collectionView.contentInset = .init(top: .zero, left: .zero, bottom: view.safeAreaInsets.bottom, right: .zero)
+        
     }
     
     override func modelUpdateHandler(updatedItems: [Model]) {
@@ -74,7 +82,9 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
 extension SearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
-        
+        if elementKind == UICollectionView.elementKindSectionFooter {
+            viewModel?.requestNextPage()
+        }
     }
 }
 
@@ -82,5 +92,10 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text, text.isEmpty == false else { return }
+        viewModel?.requestAPI(item: DefaultGitHubSearchAPI(searchItem: text, page: 1))
     }
 }

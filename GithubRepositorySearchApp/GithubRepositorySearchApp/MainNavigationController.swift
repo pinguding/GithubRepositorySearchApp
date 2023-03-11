@@ -13,6 +13,9 @@ final class MainNavigationController: UINavigationController {
         super.viewDidLoad()
         self.navigationBar.prefersLargeTitles = true
         self.delegate = self
+        
+        pushViewController(SearchViewController.build(viewModel: SearchViewModel()), animated: false)
+        
     }
 }
 
