@@ -32,10 +32,4 @@ open class BaseCollectionView: UICollectionView {
         cell.configureCell(item: itemIdentifier)
         return cell
     }
-    
-    func dequeueReusableBaseSupplementaryView<View, Item>(_ view: View.Type, kind: String, item: Item, for indexPath: IndexPath) -> View where View: BaseCollectionReusableView<Item>, Item: Hashable {
-        let cell = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: view.identifier, for: indexPath) as! View
-        cell.configureReusableView(item: item)
-        return cell
-    }
 }
