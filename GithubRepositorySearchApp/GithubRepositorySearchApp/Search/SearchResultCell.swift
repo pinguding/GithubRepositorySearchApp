@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class SearchResultCell: BaseCollectionViewCell<SearchResultModel> {
+final class SearchResultCell: UICollectionViewCell {
     
     @IBOutlet weak var avatarImageView: UIImageView!
     
@@ -35,14 +35,13 @@ final class SearchResultCell: BaseCollectionViewCell<SearchResultModel> {
         languageLabel.text = nil
     }
     
-    override func configureCell(item: SearchResultModel) {
+    public func configureCell(item: SearchResultModel) {
         if let url = URL(string: item.avatarImageURLString) {
             avatarImageView.kf.setImage(with: .network(url))
         }
         repositoryOwnerLabel.text = item.repositoryOwner
         titleLabel.text = item.title
         descriptionLabel.text = item.description
-        stargazeCountLabel.text = item.starCount.description
         if item.language.isEmpty {
             languageColor.isHidden = true
             languageLabel.isHidden = true

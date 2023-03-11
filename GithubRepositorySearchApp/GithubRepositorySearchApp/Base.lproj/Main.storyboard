@@ -15,10 +15,23 @@
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="iaB-z6-6Xy" kind="relationship" relationship="rootViewController" id="2qg-7C-sFe"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kye-1F-H4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="371" y="58"/>
+        </scene>
+        <!--SearchViewController-->
+        <scene sceneID="Pge-tB-PcF">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchViewController" storyboardName="SearchViewController" id="iaB-z6-6Xy" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SFh-Vw-az4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hQ-8C-ASM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1227" y="58"/>
         </scene>
     </scenes>
 </document>
