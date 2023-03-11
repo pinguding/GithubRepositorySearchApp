@@ -9,22 +9,14 @@ import UIKit
 
 final class SearchViewController: BaseViewController<SearchViewModel> {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: BaseCollectionView!
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, Model>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        navigationItem.title = "Search Repository"
-        
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.hidesNavigationBarDuringPresentation = true
-        searchController.searchBar.delegate = self
-        
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = true
+        setupNavitaionBar()
         
         collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, environment in
             let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(100)))
@@ -36,10 +28,13 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
             return NSCollectionLayoutSection(group: group)
         })
         
+        collectionView.registerCells(SearchResultCell.self)
+        
         dataSource = UICollectionViewDiffableDataSource<Int, Model>(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             
+            let baseCollectionView = collectionView as? BaseCollectionView
             
-            return UICollectionViewCell()
+            return baseCollectionView?.dequeueReusableBaseCollectionCell(SearchResultCell.self, itemIdentifier: itemIdentifier, for: indexPath)
         })
     }
     
@@ -51,8 +46,15 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
     }
     
     
-    private func registerCells() {
+    private func setupNavitaionBar() {
+        navigationItem.title = "Search Repository"
         
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = true
+        searchController.searchBar.delegate = self
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
     }
 }
 
