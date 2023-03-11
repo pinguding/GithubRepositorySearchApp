@@ -13,9 +13,9 @@ struct SearchResultModel: Hashable {
     
     var title: String
     
-    var logoImageURLString: String
+    var avatarImageURLString: String
     
-    var logoTitle: String
+    var repositoryOwner: String
     
     var description: String
     
