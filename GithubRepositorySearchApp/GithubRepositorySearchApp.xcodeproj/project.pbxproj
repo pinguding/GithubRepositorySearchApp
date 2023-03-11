@@ -16,21 +16,6 @@
 		0A1E0ABC29BC9E4F00448042 /* GithubRepositorySearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0ABB29BC9E4F00448042 /* GithubRepositorySearchAppTests.swift */; };
 		0A1E0AC629BC9E4F00448042 /* GithubRepositorySearchAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AC529BC9E4F00448042 /* GithubRepositorySearchAppUITests.swift */; };
 		0A1E0AC829BC9E4F00448042 /* GithubRepositorySearchAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AC729BC9E4F00448042 /* GithubRepositorySearchAppUITestsLaunchTests.swift */; };
-		0A1E0AD629BCA70100448042 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AD529BCA70100448042 /* BaseViewController.swift */; };
-		0A1E0AD829BCA81600448042 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AD729BCA81600448042 /* BaseViewModel.swift */; };
-		0A1E0ADA29BCB71B00448042 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AD929BCB71B00448042 /* SearchViewModel.swift */; };
-		0A1E0ADD29BCBEBA00448042 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E0ADC29BCBEBA00448042 /* SearchViewController.storyboard */; };
-		0A1E0ADF29BCBF6000448042 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0ADE29BCBF6000448042 /* MainNavigationController.swift */; };
-		0A1E0AE129BCC31D00448042 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AE029BCC31D00448042 /* SearchResultCell.swift */; };
-		0A1E0AE329BCC34100448042 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E0AE229BCC34100448042 /* SearchResultCell.xib */; };
-		0A58857929BCC8CC00D073BB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A58857829BCC8CC00D073BB /* Kingfisher */; };
-		0A58857C29BCCE5E00D073BB /* BaseCollectionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58857B29BCCE5E00D073BB /* BaseCollectionComponents.swift */; };
-		0A58857E29BCCFC800D073BB /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58857D29BCCFC800D073BB /* BaseCollectionView.swift */; };
-		0A58858029BCDC3C00D073BB /* UICollectionReusableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58857F29BCDC3C00D073BB /* UICollectionReusableViewExtension.swift */; };
-		0A58858329BCE22000D073BB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58858229BCE22000D073BB /* Network.swift */; };
-		0A58858529BCE2B400D073BB /* GithubAPIItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58858429BCE2B400D073BB /* GithubAPIItem.swift */; };
-		0A58858729BCEEF500D073BB /* ActivityIndicatorFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58858629BCEEF500D073BB /* ActivityIndicatorFooterView.swift */; };
-		0A58858929BCEF0C00D073BB /* ActivityIndicatorFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A58858829BCEF0C00D073BB /* ActivityIndicatorFooterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,20 +49,6 @@
 		0A1E0AC129BC9E4F00448042 /* GithubRepositorySearchAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubRepositorySearchAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A1E0AC529BC9E4F00448042 /* GithubRepositorySearchAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositorySearchAppUITests.swift; sourceTree = "<group>"; };
 		0A1E0AC729BC9E4F00448042 /* GithubRepositorySearchAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositorySearchAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0A1E0AD529BCA70100448042 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		0A1E0AD729BCA81600448042 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		0A1E0AD929BCB71B00448042 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		0A1E0ADC29BCBEBA00448042 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
-		0A1E0ADE29BCBF6000448042 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		0A1E0AE029BCC31D00448042 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
-		0A1E0AE229BCC34100448042 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
-		0A58857B29BCCE5E00D073BB /* BaseCollectionComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionComponents.swift; sourceTree = "<group>"; };
-		0A58857D29BCCFC800D073BB /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
-		0A58857F29BCDC3C00D073BB /* UICollectionReusableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionReusableViewExtension.swift; sourceTree = "<group>"; };
-		0A58858229BCE22000D073BB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		0A58858429BCE2B400D073BB /* GithubAPIItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIItem.swift; sourceTree = "<group>"; };
-		0A58858629BCEEF500D073BB /* ActivityIndicatorFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorFooterView.swift; sourceTree = "<group>"; };
-		0A58858829BCEF0C00D073BB /* ActivityIndicatorFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityIndicatorFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A58857929BCC8CC00D073BB /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,13 +101,10 @@
 			children = (
 				0A1E0AA429BC9E4D00448042 /* AppDelegate.swift */,
 				0A1E0AA629BC9E4D00448042 /* SceneDelegate.swift */,
-				0A58858129BCE21200D073BB /* Network */,
-				0A58857A29BCCDB000D073BB /* Extensions */,
+				0A1E0AA829BC9E4D00448042 /* SearchViewController.swift */,
 				0A1E0AAA29BC9E4D00448042 /* Main.storyboard */,
-				0A1E0ADE29BCBF6000448042 /* MainNavigationController.swift */,
-				0A1E0ADB29BCBE7C00448042 /* Search */,
-				0A1E0AD429BCA61E00448042 /* Base */,
 				0A1E0AAD29BC9E4F00448042 /* Assets.xcassets */,
+				0A1E0AD429BCA61E00448042 /* New Group */,
 				0A1E0AAF29BC9E4F00448042 /* LaunchScreen.storyboard */,
 				0A1E0AB229BC9E4F00448042 /* Info.plist */,
 			);
@@ -161,46 +128,11 @@
 			path = GithubRepositorySearchAppUITests;
 			sourceTree = "<group>";
 		};
-		0A1E0AD429BCA61E00448042 /* Base */ = {
+		0A1E0AD429BCA61E00448042 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				0A58857D29BCCFC800D073BB /* BaseCollectionView.swift */,
-				0A58857B29BCCE5E00D073BB /* BaseCollectionComponents.swift */,
-				0A1E0AD529BCA70100448042 /* BaseViewController.swift */,
-				0A1E0AD729BCA81600448042 /* BaseViewModel.swift */,
 			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		0A1E0ADB29BCBE7C00448042 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				0A1E0AA829BC9E4D00448042 /* SearchViewController.swift */,
-				0A1E0ADC29BCBEBA00448042 /* SearchViewController.storyboard */,
-				0A1E0AD929BCB71B00448042 /* SearchViewModel.swift */,
-				0A58858429BCE2B400D073BB /* GithubAPIItem.swift */,
-				0A1E0AE029BCC31D00448042 /* SearchResultCell.swift */,
-				0A1E0AE229BCC34100448042 /* SearchResultCell.xib */,
-				0A58858629BCEEF500D073BB /* ActivityIndicatorFooterView.swift */,
-				0A58858829BCEF0C00D073BB /* ActivityIndicatorFooterView.xib */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		0A58857A29BCCDB000D073BB /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				0A58857F29BCDC3C00D073BB /* UICollectionReusableViewExtension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		0A58858129BCE21200D073BB /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				0A58858229BCE22000D073BB /* Network.swift */,
-			);
-			path = Network;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +151,6 @@
 			dependencies = (
 			);
 			name = GithubRepositorySearchApp;
-			packageProductDependencies = (
-				0A58857829BCC8CC00D073BB /* Kingfisher */,
-			);
 			productName = GithubRepositorySearchApp;
 			productReference = 0A1E0AA129BC9E4D00448042 /* GithubRepositorySearchApp.app */;
 			productType = "com.apple.product-type.application";
@@ -294,9 +223,6 @@
 				Base,
 			);
 			mainGroup = 0A1E0A9829BC9E4D00448042;
-			packageReferences = (
-				0A58857729BCC8CC00D073BB /* XCRemoteSwiftPackageReference "Kingfisher" */,
-			);
 			productRefGroup = 0A1E0AA229BC9E4D00448042 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -313,12 +239,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A58858929BCEF0C00D073BB /* ActivityIndicatorFooterView.xib in Resources */,
 				0A1E0AB129BC9E4F00448042 /* LaunchScreen.storyboard in Resources */,
-				0A1E0AE329BCC34100448042 /* SearchResultCell.xib in Resources */,
 				0A1E0AAE29BC9E4F00448042 /* Assets.xcassets in Resources */,
 				0A1E0AAC29BC9E4D00448042 /* Main.storyboard in Resources */,
-				0A1E0ADD29BCBEBA00448042 /* SearchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,20 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A58858029BCDC3C00D073BB /* UICollectionReusableViewExtension.swift in Sources */,
-				0A1E0ADA29BCB71B00448042 /* SearchViewModel.swift in Sources */,
-				0A58858729BCEEF500D073BB /* ActivityIndicatorFooterView.swift in Sources */,
-				0A58858329BCE22000D073BB /* Network.swift in Sources */,
 				0A1E0AA929BC9E4D00448042 /* SearchViewController.swift in Sources */,
-				0A1E0AD829BCA81600448042 /* BaseViewModel.swift in Sources */,
-				0A58858529BCE2B400D073BB /* GithubAPIItem.swift in Sources */,
-				0A1E0AD629BCA70100448042 /* BaseViewController.swift in Sources */,
-				0A58857E29BCCFC800D073BB /* BaseCollectionView.swift in Sources */,
-				0A1E0ADF29BCBF6000448042 /* MainNavigationController.swift in Sources */,
 				0A1E0AA529BC9E4D00448042 /* AppDelegate.swift in Sources */,
-				0A1E0AE129BCC31D00448042 /* SearchResultCell.swift in Sources */,
 				0A1E0AA729BC9E4D00448042 /* SceneDelegate.swift in Sources */,
-				0A58857C29BCCE5E00D073BB /* BaseCollectionComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,25 +612,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		0A58857729BCC8CC00D073BB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 7.6.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0A58857829BCC8CC00D073BB /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0A58857729BCC8CC00D073BB /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A1E0A9929BC9E4D00448042 /* Project object */;
 }
