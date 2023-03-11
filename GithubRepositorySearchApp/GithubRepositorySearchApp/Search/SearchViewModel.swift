@@ -36,4 +36,5 @@ final class SearchViewModel: BaseViewModel {
     
     func viewLifeCycleUpdate(_ lifeCycle: BaseUILifeCycle) { }
     
+    
 }
