@@ -27,6 +27,10 @@
 		0A58857C29BCCE5E00D073BB /* BaseCollectionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58857B29BCCE5E00D073BB /* BaseCollectionComponents.swift */; };
 		0A58857E29BCCFC800D073BB /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58857D29BCCFC800D073BB /* BaseCollectionView.swift */; };
 		0A58858029BCDC3C00D073BB /* UICollectionReusableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58857F29BCDC3C00D073BB /* UICollectionReusableViewExtension.swift */; };
+		0A58858329BCE22000D073BB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58858229BCE22000D073BB /* Network.swift */; };
+		0A58858529BCE2B400D073BB /* GithubAPIItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58858429BCE2B400D073BB /* GithubAPIItem.swift */; };
+		0A58858729BCEEF500D073BB /* ActivityIndicatorFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A58858629BCEEF500D073BB /* ActivityIndicatorFooterView.swift */; };
+		0A58858929BCEF0C00D073BB /* ActivityIndicatorFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A58858829BCEF0C00D073BB /* ActivityIndicatorFooterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		0A58857B29BCCE5E00D073BB /* BaseCollectionComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionComponents.swift; sourceTree = "<group>"; };
 		0A58857D29BCCFC800D073BB /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 		0A58857F29BCDC3C00D073BB /* UICollectionReusableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionReusableViewExtension.swift; sourceTree = "<group>"; };
+		0A58858229BCE22000D073BB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		0A58858429BCE2B400D073BB /* GithubAPIItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIItem.swift; sourceTree = "<group>"; };
+		0A58858629BCEEF500D073BB /* ActivityIndicatorFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorFooterView.swift; sourceTree = "<group>"; };
+		0A58858829BCEF0C00D073BB /* ActivityIndicatorFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityIndicatorFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 			children = (
 				0A1E0AA429BC9E4D00448042 /* AppDelegate.swift */,
 				0A1E0AA629BC9E4D00448042 /* SceneDelegate.swift */,
+				0A58858129BCE21200D073BB /* Network */,
 				0A58857A29BCCDB000D073BB /* Extensions */,
 				0A1E0AAA29BC9E4D00448042 /* Main.storyboard */,
 				0A1E0ADE29BCBF6000448042 /* MainNavigationController.swift */,
@@ -169,8 +178,11 @@
 				0A1E0AA829BC9E4D00448042 /* SearchViewController.swift */,
 				0A1E0ADC29BCBEBA00448042 /* SearchViewController.storyboard */,
 				0A1E0AD929BCB71B00448042 /* SearchViewModel.swift */,
+				0A58858429BCE2B400D073BB /* GithubAPIItem.swift */,
 				0A1E0AE029BCC31D00448042 /* SearchResultCell.swift */,
 				0A1E0AE229BCC34100448042 /* SearchResultCell.xib */,
+				0A58858629BCEEF500D073BB /* ActivityIndicatorFooterView.swift */,
+				0A58858829BCEF0C00D073BB /* ActivityIndicatorFooterView.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -181,6 +193,14 @@
 				0A58857F29BCDC3C00D073BB /* UICollectionReusableViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A58858129BCE21200D073BB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0A58858229BCE22000D073BB /* Network.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A58858929BCEF0C00D073BB /* ActivityIndicatorFooterView.xib in Resources */,
 				0A1E0AB129BC9E4F00448042 /* LaunchScreen.storyboard in Resources */,
 				0A1E0AE329BCC34100448042 /* SearchResultCell.xib in Resources */,
 				0A1E0AAE29BC9E4F00448042 /* Assets.xcassets in Resources */,
@@ -324,8 +345,11 @@
 			files = (
 				0A58858029BCDC3C00D073BB /* UICollectionReusableViewExtension.swift in Sources */,
 				0A1E0ADA29BCB71B00448042 /* SearchViewModel.swift in Sources */,
+				0A58858729BCEEF500D073BB /* ActivityIndicatorFooterView.swift in Sources */,
+				0A58858329BCE22000D073BB /* Network.swift in Sources */,
 				0A1E0AA929BC9E4D00448042 /* SearchViewController.swift in Sources */,
 				0A1E0AD829BCA81600448042 /* BaseViewModel.swift in Sources */,
+				0A58858529BCE2B400D073BB /* GithubAPIItem.swift in Sources */,
 				0A1E0AD629BCA70100448042 /* BaseViewController.swift in Sources */,
 				0A58857E29BCCFC800D073BB /* BaseCollectionView.swift in Sources */,
 				0A1E0ADF29BCBF6000448042 /* MainNavigationController.swift in Sources */,
