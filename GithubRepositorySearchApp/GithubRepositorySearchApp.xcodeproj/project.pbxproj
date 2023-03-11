@@ -16,6 +16,9 @@
 		0A1E0ABC29BC9E4F00448042 /* GithubRepositorySearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0ABB29BC9E4F00448042 /* GithubRepositorySearchAppTests.swift */; };
 		0A1E0AC629BC9E4F00448042 /* GithubRepositorySearchAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AC529BC9E4F00448042 /* GithubRepositorySearchAppUITests.swift */; };
 		0A1E0AC829BC9E4F00448042 /* GithubRepositorySearchAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AC729BC9E4F00448042 /* GithubRepositorySearchAppUITestsLaunchTests.swift */; };
+		0A1E0AD629BCA70100448042 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AD529BCA70100448042 /* BaseViewController.swift */; };
+		0A1E0AD829BCA81600448042 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AD729BCA81600448042 /* BaseViewModel.swift */; };
+		0A1E0ADA29BCB71B00448042 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AD929BCB71B00448042 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		0A1E0AC129BC9E4F00448042 /* GithubRepositorySearchAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubRepositorySearchAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A1E0AC529BC9E4F00448042 /* GithubRepositorySearchAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositorySearchAppUITests.swift; sourceTree = "<group>"; };
 		0A1E0AC729BC9E4F00448042 /* GithubRepositorySearchAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositorySearchAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0A1E0AD529BCA70100448042 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0A1E0AD729BCA81600448042 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		0A1E0AD929BCB71B00448042 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +108,10 @@
 				0A1E0AA429BC9E4D00448042 /* AppDelegate.swift */,
 				0A1E0AA629BC9E4D00448042 /* SceneDelegate.swift */,
 				0A1E0AA829BC9E4D00448042 /* SearchViewController.swift */,
+				0A1E0AD929BCB71B00448042 /* SearchViewModel.swift */,
 				0A1E0AAA29BC9E4D00448042 /* Main.storyboard */,
 				0A1E0AAD29BC9E4F00448042 /* Assets.xcassets */,
-				0A1E0AD429BCA61E00448042 /* New Group */,
+				0A1E0AD429BCA61E00448042 /* Base */,
 				0A1E0AAF29BC9E4F00448042 /* LaunchScreen.storyboard */,
 				0A1E0AB229BC9E4F00448042 /* Info.plist */,
 			);
@@ -128,11 +135,13 @@
 			path = GithubRepositorySearchAppUITests;
 			sourceTree = "<group>";
 		};
-		0A1E0AD429BCA61E00448042 /* New Group */ = {
+		0A1E0AD429BCA61E00448042 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				0A1E0AD529BCA70100448042 /* BaseViewController.swift */,
+				0A1E0AD729BCA81600448042 /* BaseViewModel.swift */,
 			);
-			path = "New Group";
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1E0ADA29BCB71B00448042 /* SearchViewModel.swift in Sources */,
 				0A1E0AA929BC9E4D00448042 /* SearchViewController.swift in Sources */,
+				0A1E0AD829BCA81600448042 /* BaseViewModel.swift in Sources */,
+				0A1E0AD629BCA70100448042 /* BaseViewController.swift in Sources */,
 				0A1E0AA529BC9E4D00448042 /* AppDelegate.swift in Sources */,
 				0A1E0AA729BC9E4D00448042 /* SceneDelegate.swift in Sources */,
 			);
