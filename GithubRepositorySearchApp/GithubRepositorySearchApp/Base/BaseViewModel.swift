@@ -32,13 +32,19 @@ public struct AlertModel {
         
         var buttonAction: ((UIAlertAction) -> Void)?
     }
+    
+    static func networkDefaultModel(message: String?) -> AlertModel {
+        return AlertModel(title: "네트워크 오류", message: message, buttons: [
+            AlertButtonModel(buttonTitle: "확인", style: .default)
+        ])
+    }
 }
 
 public protocol BaseViewModel: AnyObject {
     
     associatedtype Model: Hashable
     
-    var modelPublisher: PassthroughSubject<[Model], Never> { get }
+    var modelPublisher: CurrentValueSubject<[Model], Never> { get }
     
     var alertPublisher: PassthroughSubject<AlertModel, Never> { get }
     

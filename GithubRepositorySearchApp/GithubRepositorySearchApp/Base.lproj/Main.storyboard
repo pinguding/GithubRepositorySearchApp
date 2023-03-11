@@ -4,47 +4,21 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="VaG-fw-Ngr">
             <objects>
-                <navigationController id="XGd-U7-rZF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XGd-U7-rZF" customClass="MainNavigationController" customModule="GithubRepositorySearchApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mSP-rL-HwQ">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="MPt-VD-Q2W" kind="relationship" relationship="rootViewController" id="loN-mb-xqU"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kye-1F-H4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="371" y="58"/>
         </scene>
-        <!--Search View Controller-->
-        <scene sceneID="4Ub-o5-Mqc">
-            <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="MPt-VD-Q2W" customClass="SearchViewController" customModule="GithubRepositorySearchApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zas-Ic-mNl">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="kGf-dw-CQt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="3ZY-ZD-X59"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nQE-TP-whM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1303" y="58"/>
-        </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

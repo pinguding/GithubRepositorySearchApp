@@ -16,7 +16,7 @@ open class BaseViewController<ViewModel: BaseViewModel>: UIViewController {
         String(describing: Self.self)
     }
     
-    public private(set) weak var viewModel: ViewModel?
+    public private(set) var viewModel: ViewModel?
     
     public var cancellable: Set<AnyCancellable> = []
     
@@ -33,6 +33,7 @@ open class BaseViewController<ViewModel: BaseViewModel>: UIViewController {
         super.viewDidLoad()
         
         viewModel?.viewLifeCycleUpdate(.viewDidLoad)
+        sinkViewModel()
     }
     
     override open func viewWillAppear(_ animated: Bool) {
