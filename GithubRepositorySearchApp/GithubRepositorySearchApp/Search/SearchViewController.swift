@@ -31,6 +31,7 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
                     NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
                 ]
             }
+            section.contentInsets = .init(top: .zero, leading: 20, bottom: .zero, trailing: 20)
             section.interGroupSpacing = 20
             
             return section
@@ -73,12 +74,7 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
         searchController.searchBar.delegate = self
         
         navigationItem.searchController = searchController
-    }
-    
-    private func removeImageCache() {
-        let cache = ImageCache.default
-        
-        cache.clearCache()
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
 }
 
@@ -91,7 +87,12 @@ extension SearchViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let urlString = viewModel?.modelPublisher.value[indexPath.item].repositoryURLString else {
+            return
+        }
         
+        let repositoryViewController = RepositoryViewController.build(viewModel: RepositoryViewModel(urlString: urlString))
+        navigationController?.pushViewController(repositoryViewController, animated: true)
     }
 }
 
