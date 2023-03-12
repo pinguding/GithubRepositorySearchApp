@@ -29,7 +29,7 @@ public enum APIError: Error {
     case networkFail(Error)
     case nullResponseData
     case responseDataDecodingFail
-    
+    case apiRequestLimitExceed
     var alertMessage: String {
         switch self {
         case .wrongQuery, .cannotConvertStringToURL:
@@ -42,6 +42,8 @@ public enum APIError: Error {
             return "Network connection lost"
         case .nullResponseData, .responseDataDecodingFail:
             return "Invalid data type was received"
+        case .apiRequestLimitExceed:
+            return "요청 빈도수가 초과되었습니다. 다음에 다시 시도해보세요."
         }
     }
 }
@@ -96,7 +98,7 @@ public struct API<Item: APIItem> {
                     return
                 }
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    promise(.failure(APIError.responseFail(nil)))
+                    promise(.failure(APIError.apiRequestLimitExceed))
                     return
                 }
                 
