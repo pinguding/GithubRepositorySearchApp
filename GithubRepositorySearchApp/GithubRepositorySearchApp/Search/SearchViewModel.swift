@@ -24,6 +24,8 @@ struct SearchResultModel: Hashable {
     var language: String
     
     var languageColor: String
+    
+    var repositoryURLString: String
 }
 
 final class SearchViewModel: BaseViewModel {
@@ -83,19 +85,23 @@ final class SearchViewModel: BaseViewModel {
                 self.totalCount = response.totalCount
                 let newModels = response.items
                     .map { githubItem -> SearchResultModel in
-                        return SearchResultModel(title: githubItem.name, avatarImageURLString: githubItem.owner.avatarURL, repositoryOwner: githubItem.owner.login, description: githubItem.description ?? "", starCount: githubItem.starCount, language: githubItem.language ?? "", languageColor: "")
+                        return SearchResultModel(title: githubItem.name, avatarImageURLString: githubItem.owner.avatarURL, repositoryOwner: githubItem.owner.login, description: githubItem.description ?? "", starCount: githubItem.starCount, language: githubItem.language ?? "", languageColor: "", repositoryURLString: githubItem.htmlUrl)
                     }
-                self.enableActivityIndicator = response.totalCount > self.modelPublisher.value.count + newModels.count
                 if isNewItem {
                     if newModels.isEmpty {
                         self.alertPublisher.send(AlertModel(title: "검색 결과가 없습니다.", buttons: [.init(buttonTitle: "확인", style: .default)]))
+                        self.enableActivityIndicator = false
+                        self.modelPublisher.send([])
+                        return
                     }
-                    self.modelPublisher.value.removeAll()
+                    self.enableActivityIndicator = response.totalCount > newModels.count
                     self.modelPublisher.send(newModels)
+                    
                 } else {
+                    self.enableActivityIndicator = response.totalCount > self.modelPublisher.value.count + newModels.count
                     self.modelPublisher.value.append(contentsOf: newModels)
                 }
-                print("DEBUG", "TOTAL COUNT: \(response.totalCount)", "Current Size: \(self.modelPublisher.value.count)")
+                print("DEBUG", "TOTAL COUNT: \(response.totalCount)", "Page Count: \(self.currentAPIItem?.currentPage)", "Current Size: \(self.modelPublisher.value.count)")
             }
             .store(in: &cancellable)
     }

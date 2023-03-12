@@ -31,8 +31,6 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
                     NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
                 ]
             }
-            
-            section.contentInsets = .init(top: 20, leading: 20, bottom: .zero, trailing: 20)
             section.interGroupSpacing = 20
             
             return section
@@ -91,14 +89,14 @@ extension SearchViewController: UICollectionViewDelegate {
             viewModel?.requestNextPage()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-    }
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, text.isEmpty == false else { return }
         viewModel?.requestAPI(item: DefaultGitHubSearchAPI(searchItem: text, page: 1))

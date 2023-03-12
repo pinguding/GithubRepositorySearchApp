@@ -135,6 +135,7 @@
 				0A58857A29BCCDB000D073BB /* Extensions */,
 				0A1E0AAA29BC9E4D00448042 /* Main.storyboard */,
 				0A1E0ADE29BCBF6000448042 /* MainNavigationController.swift */,
+				0A7E39E529BE1C6E002E5E00 /* Repository */,
 				0A1E0ADB29BCBE7C00448042 /* Search */,
 				0A1E0AD429BCA61E00448042 /* Base */,
 				0A1E0AAD29BC9E4F00448042 /* Assets.xcassets */,
@@ -201,6 +202,13 @@
 				0A58858229BCE22000D073BB /* Network.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		0A7E39E529BE1C6E002E5E00 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
