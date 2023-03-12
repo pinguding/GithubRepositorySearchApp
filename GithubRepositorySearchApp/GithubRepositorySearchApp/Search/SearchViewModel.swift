@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Kingfisher
 
 struct SearchResultModel: Hashable {
     var id: String = UUID().uuidString
@@ -52,7 +53,14 @@ final class SearchViewModel: BaseViewModel {
         cancellable.removeAll()
     }
     
-    func viewLifeCycleUpdate(_ lifeCycle: BaseUILifeCycle) { }
+    func viewLifeCycleUpdate(_ lifeCycle: BaseUILifeCycle) {
+        switch lifeCycle {
+        case .viewDidDisappear:
+            removeImageCache()
+        default:
+            return
+        }
+    }
     
     func requestNextPage() {
         if let currentAPIItem = currentAPIItem, let totalCount = totalCount {
@@ -101,8 +109,15 @@ final class SearchViewModel: BaseViewModel {
                     self.enableActivityIndicator = response.totalCount > self.modelPublisher.value.count + newModels.count
                     self.modelPublisher.value.append(contentsOf: newModels)
                 }
-                print("DEBUG", "TOTAL COUNT: \(response.totalCount)", "Page Count: \(self.currentAPIItem?.currentPage)", "Current Size: \(self.modelPublisher.value.count)")
+//                print("DEBUG", "TOTAL COUNT: \(response.totalCount)", "Page Count: \(String(describing: self.currentAPIItem?.currentPage))", "Current Size: \(self.modelPublisher.value.count)")
             }
             .store(in: &cancellable)
+    }
+    
+    
+    private func removeImageCache() {
+        let cache = ImageCache.default
+        
+        cache.clearCache()
     }
 }
