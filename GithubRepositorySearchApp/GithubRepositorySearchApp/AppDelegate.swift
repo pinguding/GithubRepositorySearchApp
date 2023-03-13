@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        /**
+         앱이 시작될때 이미 만료된 Image Cache 삭제
+         */
         ImageCache.default.cleanExpiredCache()
 
         return true
@@ -36,6 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+        /**
+         앱이 종료 될 시에 Disk에 남아있는 Image Cache 삭제
+         */
         ImageCache.default.clearDiskCache()
     }
 }

@@ -53,7 +53,7 @@ final class SearchViewModel: BaseViewModel {
         cancellable.removeAll()
     }
     
-    func viewLifeCycleUpdate(_ lifeCycle: BaseUILifeCycle) {
+    func viewLifeCycle(_ lifeCycle: BaseUILifeCycle) {
         switch lifeCycle {
         case .viewDidDisappear:
             removeImageCache()
@@ -80,7 +80,14 @@ final class SearchViewModel: BaseViewModel {
                 case let .failure(error):
                     var messageString: String? = nil
                     if let error = error as? APIError {
-                        messageString = error.alertMessage
+                        switch error {
+                        case let .responseFail(code):
+                            if let code = code, code == 403 {
+                                messageString = "요청 빈도수가 초과되었습니다. 잠시 후 다시 시도해보세요."
+                            }
+                        default:
+                            messageString = error.alertMessage
+                        }
                     }
                     self?.alertPublisher.send(AlertModel.networkDefaultModel(message: messageString))
                 case .finished:

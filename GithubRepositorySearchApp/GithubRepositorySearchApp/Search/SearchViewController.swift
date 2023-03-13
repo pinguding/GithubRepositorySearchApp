@@ -12,10 +12,10 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
 
     @IBOutlet weak var collectionView: BaseCollectionView!
     
+    ///SearchViewController 에서 사용하는 UICollectionView의 UICollectionViewDiffableDataSource
     private var dataSource: UICollectionViewDiffableDataSource<Int, Model>?
     
-    var repoViewModel: RepositoryViewModel?
-    
+    ///Main.storyboard 에서 바로 RootViewController 로 initailize 되기 때문에 Storyboard 로 initailize 되는 required init?(coder: NSCoder) 에서 viewModel 을 생성함
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
@@ -55,10 +55,10 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
             return baseCollectionView?.dequeueReusableBaseCollectionCell(SearchResultCell.self, itemIdentifier: itemIdentifier, for: indexPath)
         })
         
-        dataSource?.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
+        dataSource?.supplementaryViewProvider = { collectionView, kind, indexPath in
             let baseCollectionView = collectionView as? BaseCollectionView
             
-            guard let self = self, let viewModel = self.viewModel else { return UICollectionReusableView() }
+            guard let viewModel = self.viewModel else { return UICollectionReusableView() }
             
             return baseCollectionView?.dequeueReusableBaseSupplementaryView(ActivityIndicatorFooterView.self, kind: UICollectionView.elementKindSectionFooter, item: viewModel.enableActivityIndicator, for: indexPath)
         }
@@ -80,6 +80,8 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
+        ///obscuresBackgroundDuringPresentation = false 로 지정한 이유는 searchResultController 를 이용하고 있지않고 해당 부분을 true 로 두면 iOS 13 에서
+        ///searchController 의 searchBar 가 first responder 가 되었을때 obsecure 한 layer 가 생기고 해당 layer 때문에 SearhViewController 의 Control 이 적용되지 않아 필수로 지정해야함
         searchController.obscuresBackgroundDuringPresentation = false
         
         navigationItem.searchController = searchController
@@ -90,6 +92,7 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
 extension SearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        ///ActivityIndicator Footer View 가 보여지게 될때 그다음 Page 에 대한 request 를 보낸다.
         if elementKind == UICollectionView.elementKindSectionFooter {
             viewModel?.requestNextPage()
         }
@@ -99,8 +102,8 @@ extension SearchViewController: UICollectionViewDelegate {
         guard let urlString = viewModel?.modelPublisher.value[indexPath.item].repositoryURLString else {
             return
         }
-        repoViewModel = RepositoryViewModel(urlString: urlString)
-        let repositoryViewController = RepositoryViewController.build(viewModel: repoViewModel!)
+        ///셀을 선택할 시 Github Repository URL 을 이용해 WebView 를 통해 보여준다.
+        let repositoryViewController = RepositoryViewController.build(viewModel: RepositoryViewModel(urlString: urlString))
         navigationController?.pushViewController(repositoryViewController, animated: true)
     }
 }

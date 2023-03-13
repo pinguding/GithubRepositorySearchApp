@@ -8,11 +8,13 @@
 import Foundation
 import Combine
 
+///URLSession 에서 사용할 HTTP Method 에 대한 get, post 에 대한 정의
 public enum Method: String {
     case get = "GET"
     case post = "POST"
 }
 
+///API 호출에 사용되는 API Base URL 과 Path 에 대한 정의
 public protocol APIItem {
     var baseURL: String { get }
     var path: String { get }
@@ -21,6 +23,7 @@ public protocol APIItem {
     var headerFields: [String: String] { get }
 }
 
+///API 이용시 발생하는 Error 에 대한 정의와 각 Error 발생시에 화면에 띄워줄 UIAlertController 의 Message 정의
 public enum APIError: Error {
     case wrongQuery
     case cannotConvertStringToURL
@@ -29,7 +32,6 @@ public enum APIError: Error {
     case networkFail(Error)
     case nullResponseData
     case responseDataDecodingFail
-    case apiRequestLimitExceed
     var alertMessage: String {
         switch self {
         case .wrongQuery, .cannotConvertStringToURL:
@@ -42,12 +44,12 @@ public enum APIError: Error {
             return "Network connection lost"
         case .nullResponseData, .responseDataDecodingFail:
             return "Invalid data type was received"
-        case .apiRequestLimitExceed:
-            return "요청 빈도수가 초과되었습니다. 다음에 다시 시도해보세요."
         }
     }
 }
 
+///API 호출에 사용될 Struct, 재사용을 위해 Generic 으로 API 를 생성하도록 개발함.
+///Generic 을 이용한 이유는 호출하고 있는 API 에 대한 Path, Method, Parameter 를 직관적으로 알 수 있도록 하기위해 만듦
 public struct API<Item: APIItem> {
 
     ///Request API, Response Data 를 디코딩해줄 data type 을 responseDataType 에 넣어준다. 네트워크 결과를 콘솔에서 확인하고 싶을때는 verbose 를 true로, default 는 false
@@ -97,12 +99,14 @@ public struct API<Item: APIItem> {
                     promise(.failure(APIError.networkFail(error)))
                     return
                 }
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    promise(.failure(APIError.apiRequestLimitExceed))
+                
+                guard let response = response as? HTTPURLResponse else {
+                    promise(.failure(APIError.responseFail(-1)))
                     return
                 }
                 
                 guard response.statusCode == 200 else {
+                    if verbose { print("\(response.statusCode) Failure", "Response Data: \(String(data: data ?? Data(), encoding: .utf8) ?? "")") }
                     promise(.failure(APIError.responseFail(response.statusCode)))
                     return
                 }

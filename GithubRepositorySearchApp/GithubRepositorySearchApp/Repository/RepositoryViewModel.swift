@@ -25,7 +25,7 @@ final class RepositoryViewModel: BaseViewModel {
         repositoryURL = URL(string: urlString)
     }
     
-    func viewLifeCycleUpdate(_ lifeCycle: BaseUILifeCycle) {
+    func viewLifeCycle(_ lifeCycle: BaseUILifeCycle) {
         switch lifeCycle {
         case .viewDidLoad:
             if let url = repositoryURL {
