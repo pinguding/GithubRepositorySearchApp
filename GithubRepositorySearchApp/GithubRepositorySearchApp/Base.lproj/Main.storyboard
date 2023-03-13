@@ -7,18 +7,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="VaG-fw-Ngr">
             <objects>
-                <navigationController storyboardIdentifier="MainNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XGd-U7-rZF" customClass="MainNavigationController" customModule="GithubRepositorySearchApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XGd-U7-rZF" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mSP-rL-HwQ">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="3tf-mE-MdY" kind="relationship" relationship="rootViewController" id="zI6-t5-LbL"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kye-1F-H4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="371" y="58"/>
+        </scene>
+        <!--SearchViewController-->
+        <scene sceneID="lFF-Nt-puO">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchViewController" storyboardName="SearchViewController" id="3tf-mE-MdY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cT5-se-xsU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PTZ-6P-Q7F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="58"/>
         </scene>
     </scenes>
 </document>

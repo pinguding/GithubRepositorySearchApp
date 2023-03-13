@@ -16,7 +16,7 @@ open class BaseViewController<ViewModel: BaseViewModel>: UIViewController {
         String(describing: Self.self)
     }
     
-    public private(set) var viewModel: ViewModel?
+    internal var viewModel: ViewModel?
     
     public var cancellable: Set<AnyCancellable> = []
     

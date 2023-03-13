@@ -109,7 +109,6 @@ final class SearchViewModel: BaseViewModel {
                     self.enableActivityIndicator = response.totalCount > self.modelPublisher.value.count + newModels.count
                     self.modelPublisher.value.append(contentsOf: newModels)
                 }
-//                print("DEBUG", "TOTAL COUNT: \(response.totalCount)", "Page Count: \(String(describing: self.currentAPIItem?.currentPage))", "Current Size: \(self.modelPublisher.value.count)")
             }
             .store(in: &cancellable)
     }
