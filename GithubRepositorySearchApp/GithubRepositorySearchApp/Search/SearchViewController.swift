@@ -14,6 +14,14 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, Model>?
     
+    var repoViewModel: RepositoryViewModel?
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        viewModel = SearchViewModel()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +39,7 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
                     NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
                 ]
             }
-            section.contentInsets = .init(top: .zero, leading: 20, bottom: .zero, trailing: 20)
+            section.contentInsets = .init(top: 20, leading: 20, bottom: .zero, trailing: 20)
             section.interGroupSpacing = 20
             
             return section
@@ -72,6 +80,7 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
         
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -90,8 +99,8 @@ extension SearchViewController: UICollectionViewDelegate {
         guard let urlString = viewModel?.modelPublisher.value[indexPath.item].repositoryURLString else {
             return
         }
-        
-        let repositoryViewController = RepositoryViewController.build(viewModel: RepositoryViewModel(urlString: urlString))
+        repoViewModel = RepositoryViewModel(urlString: urlString)
+        let repositoryViewController = RepositoryViewController.build(viewModel: repoViewModel!)
         navigationController?.pushViewController(repositoryViewController, animated: true)
     }
 }

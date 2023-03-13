@@ -23,7 +23,6 @@
 		0A1E0AD829BCA81600448042 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AD729BCA81600448042 /* BaseViewModel.swift */; };
 		0A1E0ADA29BCB71B00448042 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AD929BCB71B00448042 /* SearchViewModel.swift */; };
 		0A1E0ADD29BCBEBA00448042 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E0ADC29BCBEBA00448042 /* SearchViewController.storyboard */; };
-		0A1E0ADF29BCBF6000448042 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0ADE29BCBF6000448042 /* MainNavigationController.swift */; };
 		0A1E0AE129BCC31D00448042 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0AE029BCC31D00448042 /* SearchResultCell.swift */; };
 		0A1E0AE329BCC34100448042 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E0AE229BCC34100448042 /* SearchResultCell.xib */; };
 		0A58857929BCC8CC00D073BB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A58857829BCC8CC00D073BB /* Kingfisher */; };
@@ -74,7 +73,6 @@
 		0A1E0AD729BCA81600448042 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		0A1E0AD929BCB71B00448042 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0A1E0ADC29BCBEBA00448042 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
-		0A1E0ADE29BCBF6000448042 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		0A1E0AE029BCC31D00448042 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		0A1E0AE229BCC34100448042 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		0A58857B29BCCE5E00D073BB /* BaseCollectionComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionComponents.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				0A58858129BCE21200D073BB /* Network */,
 				0A58857A29BCCDB000D073BB /* Extensions */,
 				0A1E0AAA29BC9E4D00448042 /* Main.storyboard */,
-				0A1E0ADE29BCBF6000448042 /* MainNavigationController.swift */,
 				0A7E39E529BE1C6E002E5E00 /* Repository */,
 				0A1E0ADB29BCBE7C00448042 /* Search */,
 				0A1E0AD429BCA61E00448042 /* Base */,
@@ -372,7 +369,6 @@
 				0A58858529BCE2B400D073BB /* GithubAPIItem.swift in Sources */,
 				0A1E0AD629BCA70100448042 /* BaseViewController.swift in Sources */,
 				0A58857E29BCCFC800D073BB /* BaseCollectionView.swift in Sources */,
-				0A1E0ADF29BCBF6000448042 /* MainNavigationController.swift in Sources */,
 				0A1E0AA529BC9E4D00448042 /* AppDelegate.swift in Sources */,
 				0A1E0AE129BCC31D00448042 /* SearchResultCell.swift in Sources */,
 				0A1E0AA729BC9E4D00448042 /* SceneDelegate.swift in Sources */,
